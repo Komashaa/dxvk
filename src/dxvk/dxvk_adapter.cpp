@@ -346,6 +346,9 @@ namespace dxvk {
     enabledFeatures.vk12.shaderOutputLayer =
       m_deviceFeatures.vk12.shaderOutputLayer;
 
+    // Can be used by client APIs for synchronization purposes
+    enabledFeatures.vk12.timelineSemaphore = TRUE;
+
     // Only enable the base image robustness feature if robustness 2 isn't
     // supported, since this is only a subset of what we actually want.
     enabledFeatures.vk13.robustImageAccess =
@@ -798,6 +801,7 @@ namespace dxvk {
       "\n  bufferDeviceAddress                    : ", features.vk12.bufferDeviceAddress,
       "\n  shaderOutputViewportIndex              : ", features.vk12.shaderOutputViewportIndex,
       "\n  shaderOutputLayer                      : ", features.vk12.shaderOutputLayer,
+      "\n  timelineSemaphore                      : ", features.vk12.timelineSemaphore,
       "\nVulkan 1.3",
       "\n  robustImageAccess                      : ", features.vk13.robustImageAccess,
       "\n  pipelineCreationCacheControl           : ", features.vk13.pipelineCreationCacheControl,
